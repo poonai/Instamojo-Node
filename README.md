@@ -17,35 +17,35 @@ $ npm install instamojo-node
       
       
 ## API Doc
-  ### List Payments
+### List Payments
     api.listPayments(function(err,data,res)
       {
         if(err) throw err;//handle the error
         console.log(data);//result json
         console.log(res);//res headers
       })
-  ### get Payment
+### get Payment
      api.getPayment('payment-id',function(err,data,res)
       {
         if(err) throw err;//handle the error
         console.log(data);//result json
         console.log(res);//res headers
       })
- ### List Links
+### List Links
      api.listLinks(function(err,data,res)
       {
         if(err) throw err;//handle the error
         console.log(data);//result json
         console.log(res);//res headers
       })
- ### get Link
+### get Link
      api.getLink('slug',function(err,data,res)
       {
         if(err) throw err;//handle the error
         console.log(data);//result json
         console.log(res);//res headers
       })
- ### create Link
+### create Link
       api.createLink({title:'hello',description:'schoolboy's api',currency:'INR', base_price:0},function(err,data,res){
         if(err) throw err;//handle the error
         console.log(data);//result json
@@ -56,14 +56,14 @@ $ npm install instamojo-node
      -description
      -currency
      -base_price
- ### archive Link
+### archive Link
      api.archiveLink('slug',function(err,data,res)
       {
         if(err) throw err;//handle the error
         //archive link doesn't have response json
         console.log(res);// if staus code 204 link is archived
       })
- ### create Refund
+### create Refund
      api.createRefund({payment_id:'payment-id',type:'RFD',body:'desc for refund'},function(err,data,res)
       {
         if(err) throw err;//handle the error
@@ -84,14 +84,14 @@ $ npm install instamojo-node
     PTH: Problem not described above.
 
  body: Additonal text explaining the refund
- ### List Refunds
+### List Refunds
     api.listRefunds(function(err,data,res)
       {
         if(err) throw err;//handle the error
         console.log(data);//result json
         console.log(res);//res headers
       })
- ### get Refund
+### get Refund
     api.getRefund('refund-id',function(err,data,res)
       {
         if(err) throw err;//handle the error
