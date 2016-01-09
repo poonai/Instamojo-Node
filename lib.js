@@ -9,7 +9,7 @@ urllib.request(link,{
     'X-AUTH-TOKEN':auth_token
   }
 },function (err,data,res) {
-  callback(JSON.parse(data));
+  callback(err,JSON.parse(data),res);
 })
 }
 
@@ -22,8 +22,8 @@ var deleteRequest=function (link,api_key,auth_token,callback) {
       'X-AUTH-TOKEN':auth_token
     }
   },function (err,data,res) {
-    console.log(res);
-    callback(JSON.parse(data));
+    //console.log(res);
+    callback(err,data,res);
   })
 }
 var createRequest=function (link,api_key,auth_token,body,callback) {
@@ -35,7 +35,7 @@ var createRequest=function (link,api_key,auth_token,body,callback) {
     },
     data:body
   },function (err,data,res) {
-    callback(JSON.parse(data));
+    callback(err,JSON.parse(data),res);
   })
 }
 
