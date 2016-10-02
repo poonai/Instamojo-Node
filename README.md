@@ -6,6 +6,7 @@ Instamojo-node is a nodejs library for instamojo
 $ npm install instamojo-node
 ```
 ## usage
+```javascript
       var instamojo=require('instamojo-node');
       var api=new instamojo('api-key','auth-token');
       api.listLinks(function(err,data,res)
@@ -14,62 +15,78 @@ $ npm install instamojo-node
         console.log(data);//result json
         console.log(res);//res headers
       })
-      
+```      
       
 ## API Doc
 ### List Payments
+```javascript
     api.listPayments(function(err,data,res)
       {
         if(err) throw err;//handle the error
         console.log(data);//result json
         console.log(res);//res headers
       })
+```      
 ### get Payment
+```javascript
      api.getPayment('payment-id',function(err,data,res)
       {
         if(err) throw err;//handle the error
         console.log(data);//result json
         console.log(res);//res headers
       })
+```
 ### List Links
+```javascript
      api.listLinks(function(err,data,res)
       {
         if(err) throw err;//handle the error
         console.log(data);//result json
         console.log(res);//res headers
       })
+```
 ### get Link
+```javascript
      api.getLink('slug',function(err,data,res)
       {
         if(err) throw err;//handle the error
         console.log(data);//result json
         console.log(res);//res headers
       })
+```
 ### create Link
-      api.createLink({title:'hello',description:'schoolboy's api',currency:'INR', base_price:0},function(err,data,res){
+```javascript
+      api.createLink({title:'hello',description:'schoolboy's api'
+                     ,currency:'INR', base_price:0},function(err,data,res){
         if(err) throw err;//handle the error
         console.log(data);//result json
         console.log(res);//res headers
       })
+```
 #### required
      -title
      -description
      -currency
      -base_price
 ### archive Link
+```javascript
      api.archiveLink('slug',function(err,data,res)
       {
         if(err) throw err;//handle the error
         //archive link doesn't have response json
         console.log(res);// if staus code 204 link is archived
       })
+```
 ### create Refund
-     api.createRefund({payment_id:'payment-id',type:'RFD',body:'desc for refund'},function(err,data,res)
+```javascript
+     api.createRefund({payment_id:'payment-id'
+           ,type:'RFD',body:'desc for refund'},function(err,data,res)
       {
         if(err) throw err;//handle the error
         //archive link doesn't have response json
         console.log(res);// if staus code 204 link is archived
       })
+```
 #### requierd
  payment_id: Payment ID of the payment against which you're initiating the refund.
  type: A three letter short-code identifying the reason for this case.
@@ -85,19 +102,23 @@ $ npm install instamojo-node
 
  body: Additonal text explaining the refund
 ### List Refunds
+```javascript
     api.listRefunds(function(err,data,res)
       {
         if(err) throw err;//handle the error
         console.log(data);//result json
         console.log(res);//res headers
       })
+```
 ### get Refund
+```javascript
     api.getRefund('refund-id',function(err,data,res)
       {
         if(err) throw err;//handle the error
         console.log(data);//result json
         console.log(res);//res headers
       })
+```
 ### ISC License
 Copyright (c) 2016, schoolboy(balaji)
 
